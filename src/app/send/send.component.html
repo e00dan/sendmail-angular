@@ -1,0 +1,50 @@
+<div class="send-component">
+  <md-card>
+    <md-card-header>
+      <md-card-title><md-icon>email</md-icon> Mail</md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <p>
+        Please fill this form before we can send your message.
+      </p>
+      <br/>
+      <md-form-field >
+        <input mdInput placeholder="From" [formControl]="fromFormControl">
+        <md-error *ngIf="fromFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </md-error>
+        <md-error *ngIf="fromFormControl.hasError('required')">
+          "From" is <strong>required</strong>
+        </md-error>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="To" [formControl]="toFormControl">
+        <md-error *ngIf="toFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </md-error>
+        <md-error *ngIf="toFormControl.hasError('required')">
+          "To" is <strong>required</strong>
+        </md-error>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Subject" [formControl]="subjectFormControl">
+        <md-error *ngIf="subjectFormControl.hasError('required')">
+          "Subject" is <strong>required</strong>
+        </md-error>
+      </md-form-field>
+      <md-form-field class="message-form">
+        <textarea mdInput mdTextareaAutosize placeholder="Message" [formControl]="messageFormControl"></textarea>
+        <md-error *ngIf="messageFormControl.hasError('required')">
+          "Message" is <strong>required</strong>
+        </md-error>
+      </md-form-field>
+    </md-card-content>
+  </md-card>
+  <div class="actions-panel">
+
+    <div class="actions-panel_text">
+      <md-spinner indeterminate *ngIf="isSendingRequest"></md-spinner>
+      <div class="button-main noselect" routerLink="/send" (click)="send()"  *ngIf="!isSendingRequest">SEND</div>
+    </div>
+  </div>
+</div>

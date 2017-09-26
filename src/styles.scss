@@ -1,0 +1,71 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+body {
+  background-color: #303030;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.button-main {
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 6px;
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 10px 40px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.actions-panel {
+  text-align: center;
+  margin-top: 40px;
+
+  &_text {
+    display: inline-block;
+  }
+
+  &_info {
+    font-weight: 300;
+    font-size: 10px;
+    margin-top: 20px;
+
+    .mat-icon {
+      font-size: 12px;
+    }
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-card-title {
+  .mat-icon {
+    font-size: 18px;
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+  outline: none;
+}
+
+a {
+  color: white;
+  outline: none;
+}
