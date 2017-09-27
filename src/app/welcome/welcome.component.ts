@@ -12,8 +12,8 @@ import { MailProviderMailgunService } from '../mail-provider-mailgun.service';
 export class WelcomeComponent implements OnInit {
   constructor(
     private dialog : MdDialog,
-    private sendgrid : MailProviderSendgridService,
-    private mailgun : MailProviderMailgunService
+    public sendgrid : MailProviderSendgridService,
+    public mailgun : MailProviderMailgunService
   ) { }
 
   ngOnInit() {
