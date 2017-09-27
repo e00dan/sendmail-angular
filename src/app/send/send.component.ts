@@ -15,21 +15,21 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 export class SendComponent implements OnInit {
   isSendingRequest = false
 
-  fromFormControl = new FormControl('test@wp.pl', [
+  fromFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(EMAIL_REGEX)
   ])
 
-  toFormControl = new FormControl('kuzirashi@interia.pl', [
+  toFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern(EMAIL_REGEX)
   ])
 
-  subjectFormControl = new FormControl('Subject', [
+  subjectFormControl = new FormControl('', [
     Validators.required
   ])
 
-  messageFormControl = new FormControl('Message', [
+  messageFormControl = new FormControl('', [
     Validators.required
   ])
 
