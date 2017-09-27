@@ -10,7 +10,6 @@ import {
   MatCheckboxModule
 } from '@angular/material';
 
-
 import { WelcomeComponent } from './welcome.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
