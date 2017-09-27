@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SettingsService } from './settings.service';
 import { IMailProvider } from './business/IMailProvider';
-import 'rxjs/add/operator/toPromise'
+import 'rxjs/add/operator/toPromise';
 
+export const SETTING_ENABLED_KEY = 'sendgridEnabled';
+export const SETTING_API_KEY_NAME = 'sendgridApiKey';
 
 @Injectable()
 export class MailProviderSendgridService implements IMailProvider {
@@ -37,9 +39,9 @@ export class MailProviderSendgridService implements IMailProvider {
 
   private readonly _statusApiUrl = 'http://3tgl2vf85cht.statuspage.io/api/v2/status.json'
 
-  private readonly _settingEnabledKey = 'sendgridEnabled'
+  private readonly _settingEnabledKey = SETTING_ENABLED_KEY
 
-  private readonly _settingApiKeyName = 'sendgridApiKey'
+  private readonly _settingApiKeyName = SETTING_API_KEY_NAME
 
   private get _headers() : HttpHeaders {
     let headers = new HttpHeaders();

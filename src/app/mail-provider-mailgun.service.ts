@@ -3,9 +3,13 @@ import { IMailProvider } from './business/IMailProvider';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URLSearchParams } from '@angular/http';
 import { SettingsService } from './settings.service';
-import 'rxjs/add/operator/toPromise'
+import 'rxjs/add/operator/toPromise';
 
 const DOMAIN_NAME_PLACEHOLDER = '{DOMAIN_NAME}';
+
+export const SETTING_ENABLED_KEY = 'mailgunEnabled';
+export const SETTING_DOMAIN_NAME_KEY = 'mailgunDomainName';
+export const SETTING_API_KEY_NAME = 'mailgunApiKey';
 
 @Injectable()
 export class MailProviderMailgunService implements IMailProvider {
@@ -47,11 +51,11 @@ export class MailProviderMailgunService implements IMailProvider {
 
   private readonly _statusUrl = 'https://www.mailgun.com/';
 
-  private readonly _settingEnabledKey = 'mailgunEnabled'
+  private readonly _settingEnabledKey = SETTING_ENABLED_KEY
 
-  private readonly _settingDomainNameKey = 'mailgunDomainName'
+  private readonly _settingDomainNameKey = SETTING_DOMAIN_NAME_KEY
 
-  private readonly _settingApiKeyName = 'mailgunApiKey'
+  private readonly _settingApiKeyName = SETTING_API_KEY_NAME
 
   private get _apiHost() : string {
     return this._apiHostFormat.replace(DOMAIN_NAME_PLACEHOLDER, this.domainName);
